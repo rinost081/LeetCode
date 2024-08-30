@@ -42,3 +42,32 @@ class Solution:
 
         return False
 
+"""step3 いいのかはわからないけど、ほとんど暗記されていたので1分で書き終わりました。別解も1分程度で書き終わりました。"""
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        current_node = head
+        visited_node = set()
+
+        while current_node:
+            if current_node in visited_node:
+                return True
+
+            visited_node.add(current_node)
+            current_node = current_node.next
+
+        return False
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        fast = head
+        slow = head
+
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+
+            if fast == slow:
+                return True
+
+        return False
