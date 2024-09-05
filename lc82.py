@@ -50,7 +50,7 @@ class Solution:
         dummy = ListNode(-1, head)
         node = dummy
 
-        if node:
+        while node:
             if node.next and node.next.next and node.next.val == node.next.next.val:
                 while node.next and node.next.next and node.next.val == node.next.next.val:
                     node.next = node.next.next
@@ -68,7 +68,7 @@ class Solution:
         dummy = ListNode(-1, head)
         node = dummy
 
-        if node:
+        while node:
             if node.next and node.next.next and node.next.val == node.next.next.val:
                 while node.next and node.next.next and node.next.val == node.next.next.val:
                     node.next = node.next.next
