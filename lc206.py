@@ -95,6 +95,33 @@ class Solution:
 
 
  再帰で解く時は、recursionErrorと呼ばれるエラーが発生する可能性があるので常にそれを意識する　
+"""
 
+"""step3
 
+1分30秒
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        current = head
+        reverse_node = None
 
+        while current:
+            next_node = current.next
+            current.next = reverse_node
+            reverse_node = current
+            current = next_node
+
+        return reverse_node
+
+4分
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        def _reverse_linked_list(head, previous):
+            if head is None:
+                return previous
+            next_node = head.next
+            head.next = previous
+            return _reverse_linked_list(next_node, head)
+
+        return _reverse_linked_list(head, None)
+"""
